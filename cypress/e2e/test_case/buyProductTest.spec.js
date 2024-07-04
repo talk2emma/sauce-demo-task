@@ -6,27 +6,34 @@ import { checkout } from "../../support/page_objects/checkoutPage"
 describe('Test the functionality of login, adding products to the cart, and completing the purchase', () => {
 
   beforeEach('open the application url', () => {
-    
-    cy.visit('https://www.saucedemo.com')
-    
+    cy.visit('/') 
   })
 
   it('Verify Login with Valid Credentials', () => {
-
-    login.loginWithValidCredentials()
-
+    cy.fixture('testData.json').then((data) => {
+      const { username, password, inventorypage, pagetitle } = data.validCredentials;
+    login.loginWithValidCredentials(username, password, inventorypage, pagetitle)
+    })
   })
+  
 
   it('Verify Adding Products to Cart', () => {
-    login.loginWithValidCredentials()
+    cy.fixture('testData.json').then((data) => {
+      const { username, password, inventorypage, pagetitle } = data.validCredentials;
+    login.loginWithValidCredentials(username, password, inventorypage, pagetitle)
     productstocart.addingProductsToCart()
+    })
   })
 
   
-  it.only('verify Complete the Purchase', () => {
-    login.loginWithValidCredentials()
+  it('verify Complete the Purchase', () => {
+    cy.fixture('testData.json').then((data) => {
+      const { username, password, inventorypage, pagetitle } = data.validCredentials;
+      const { firstname, lastname, postalcode, successmessage } = data.buyerDetails;
+    login.loginWithValidCredentials(username, password, inventorypage, pagetitle)
     productstocart.addingProductsToCart()
-    checkout.checkoutFromCart()
+    checkout.checkoutFromCart(firstname, lastname, postalcode, successmessage)
+    })
 
   })
 

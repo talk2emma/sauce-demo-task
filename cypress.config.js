@@ -7,7 +7,7 @@ module.exports = defineConfig({
   e2e: {
     baseUrl:'https://www.saucedemo.com',
     chromeWebSecurity: true,
-    defaultCommandTimeout: 4000,
+    defaultCommandTimeout: 6000,
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     setupNodeEvents(on, config) {
       // implement node event listeners here

@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+// Cypress.Commands.add('oneTimeLogin', () => {
+//     cy.visit('/')
+//     cy.fixture('testData.json').then((data) => {
+//         const { username, password, inventorypage, pagetitle } = data.validCredentials;
+//       login.loginWithValidCredentials(username, password, inventorypage, pagetitle)
+//       })
+// })

@@ -8,12 +8,10 @@ export class ProductToCartPage{
         cy.get('.shopping_cart_badge').invoke('text').then((badgeCount) => {
             // Log the dynamic badge count to the console for verification
             cy.log('Dynamic badge count is: ' + badgeCount);
-            //expect(parseInt(badgeCount)).to.equal(expectedCount);
             // Step 2: Click on the parent anchor tag
             cy.get('.shopping_cart_badge').parent('a').should('be.visible').click();
 
             cy.get('.shopping_cart_badge').invoke('text').then((cartItemCountText) => {
-                const cartItemCount = parseInt(cartItemCountText);
     
                 cy.get('[data-test="cart-list"]').within(() => {
                     cy.get('[data-test="inventory-item"]').its('length').then((inventoryItemCount) => {
@@ -29,11 +27,7 @@ export class ProductToCartPage{
                 cy.get('[data-test="cart-list"]').contains('Sauce Labs Backpack')
                 cy.get('[data-test="cart-list"]').contains('Sauce Labs Bike Light')
     
-                 })
-    
-            // })
-
-            
+            });
         });
     }
 
