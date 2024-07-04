@@ -6,7 +6,7 @@ module.exports = defineConfig({
   video: false,
   e2e: {
     baseUrl:'https://www.saucedemo.com',
-    chromeWebSecurity: true,
+    chromeWebSecurity: false,
     defaultCommandTimeout: 6000,
     specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
     setupNodeEvents(on, config) {
