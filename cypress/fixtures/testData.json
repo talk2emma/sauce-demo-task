@@ -1,0 +1,15 @@
+{
+  "usernameField": "#user-name",
+  "passwordField": "#password",
+  "loginButton": "#login-button",
+  "addToCart": "#add-to-cart-sauce-labs-backpack",
+  "addToCart2": "#add-to-cart-sauce-labs-bike-light",
+  "cartButton": ".shopping_cart_link",
+  "checkoutButton": "#checkout",
+  "firstNameField": "#first-name",
+  "lastNameField": "#last-name",
+  "postalCodeField": "#postal-code",
+  "continueButton": "#continue",
+  "finishButton": "#finish",
+  "successMessage": ".complete-header"
+}
