@@ -7,7 +7,6 @@ export class CheckoutPage{
         cy.get('.shopping_cart_badge').invoke('text').then((badgeCount) => {
             // Log the dynamic badge count to the console for verification
             cy.log('Dynamic badge count is: ' + badgeCount);
-            //expect(parseInt(badgeCount)).to.equal(expectedCount);
             // Step 2: Click on the parent anchor tag
             cy.get('.shopping_cart_badge').parent('a').should('be.visible').click();
             
